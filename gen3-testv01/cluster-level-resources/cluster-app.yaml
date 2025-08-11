@@ -16,7 +16,7 @@ spec:
     path: helm/cluster-level-resources
     repoURL: https://github.com/uc-cdis/gen3-helm
   - ref: values
-    repoURL: <gitops repo>
+    repoURL: https://github.com/emalinowski/gitops-repo-gen3
     targetRevision: main
   syncPolicy:
     automated:
