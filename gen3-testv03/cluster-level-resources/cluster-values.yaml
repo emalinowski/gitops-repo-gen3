@@ -1,4 +1,4 @@
-cluster: gen3-testv01
+cluster: "gen3-testv03"
 
 accountNumber: "707767160287"
 
@@ -50,16 +50,34 @@ grafana-alloy:
 
 karpenter:
   enabled: true
-  targetRevision: "v0.32.9"
+  targetRevision: "1.0.8"
 
 karpenter-crds:
   amiSelectorName: "1-31-EKS-FIPS*"
   enabled: true
-  selectorTag: gen3-testv01
+  selectorTag: gen3-testv03
   migration: true
   default:
     consolidationPolicy: "WhenEmptyOrUnderutilized"
     consolidateAfter: "10m"
+    requirements:
+      - key: karpenter.sh/capacity-type
+        operator: In
+        values:
+          - spot
+      - key: kubernetes.io/arch
+        operator: In
+        values:
+          - amd64
+      - key: karpenter.k8s.aws/instance-category
+        operator: In
+        values:
+          - r  
+      - key: karpenter.k8s.aws/instance-size
+        operator: In
+        values:
+          - xlarge
+          - 2xlarge
   jupyter:
     consolidationPolicy: "WhenEmptyOrUnderutilized"
     consolidateAfter: "10m"
