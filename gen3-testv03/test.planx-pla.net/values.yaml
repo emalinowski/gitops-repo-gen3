@@ -78,9 +78,7 @@ fence:
     fenceConfig: "gen3-testv03-default-fence-config"
     fenceGoogleAppCredsSecret: ""
     fenceGoogleStorageCredsSecret: ""
-    createK8sJwtKeysSecret: true
     createK8sGoogleAppSecrets: true
-    createK8sFenceConfigSecret: true
     dbcreds: "gen3-testv03-default-fence-creds"
 
   usersync:
