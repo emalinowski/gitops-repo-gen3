@@ -2,11 +2,11 @@ global:
   aws:
     enabled: true
     account: "707767160287"
-    hatchery_role: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv03-default-hatchery-sa"
+    hatchery_role: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-hatchery-sa"
     secretStoreServiceAccount:
       enabled: true
       name: external-secrets
-      roleArn: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv03-default-external-secrets-sa"
+      roleArn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-external-secrets-sa"
     wafv2:
       wafAclArn: ""
   dev: false
@@ -44,7 +44,7 @@ audit:
   enabled: true
   serviceAccount:
     annotations: 
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv03-default-audit-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-audit-sa"
   externalSecrets:
     dbcreds: "gen3-testv03-default-audit-creds"
     createK8sAuditSecret: true
@@ -71,7 +71,7 @@ fence:
   enabled: true
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv03-default-fence-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-fence-sa"
 
   externalSecrets:
     fenceJwtKeys: "gen3-testv03-default-fence-jwt-keys"
@@ -167,7 +167,7 @@ manifestservice:
   enabled: true
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv03-default-manifestservice-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-manifestservice-sa"
   externalSecrets:
     createK8sManifestServiceSecret: true
 
