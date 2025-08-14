@@ -12,7 +12,7 @@ spec:
   - helm:
       releaseName: cluster-level-resources
       valueFiles:
-      - $values/gen3-testv04/cluster-level-resources/cluster-values.yaml
+      - $values/gen3-testv05/cluster-level-resources/cluster-values.yaml
     path: helm/cluster-level-resources
     repoURL: https://github.com/uc-cdis/gen3-helm
   - ref: values

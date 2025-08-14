@@ -2,11 +2,11 @@ global:
   aws:
     enabled: true
     account: "707767160287"
-    hatchery_role: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-hatchery-sa"
+    hatchery_role: "arn:aws:iam::707767160287:role/gen3-service/gen3-testv05-default-hatchery-sa"
     secretStoreServiceAccount:
       enabled: true
       name: external-secrets
-      roleArn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-external-secrets-sa"
+      roleArn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv05-default-external-secrets-sa"
     wafv2:
       wafAclArn: ""
   dev: false
@@ -14,8 +14,8 @@ global:
     deploy: true
   postgres:
     dbCreate: true
-    externalSecret: "gen3-testv03-aurora-master-password"
-  environment: "gen3-testv03"
+    externalSecret: "gen3-testv05-aurora-master-password"
+  environment: "gen3-testv05"
   hostname: "test.planx-pla.net"
   revproxyArn: "arn:aws:acm:us-east-1:707767160287:certificate/520ede2f-fc82-4bb9-af96-4b4af7deabbd"
   dictionaryUrl: "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json"
@@ -35,7 +35,7 @@ ambassador:
 arborist:
   enabled: true
   externalSecrets:
-    dbcreds: "gen3-testv03-default-arborist-creds"
+    dbcreds: "gen3-testv05-default-arborist-creds"
 
 argo-wrapper:
   enabled: false
@@ -44,42 +44,42 @@ audit:
   enabled: true
   serviceAccount:
     annotations: 
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-audit-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv05-default-audit-sa"
   externalSecrets:
-    dbcreds: "gen3-testv03-default-audit-creds"
+    dbcreds: "gen3-testv05-default-audit-creds"
     createK8sAuditSecret: true
 
 
 aws-es-proxy:
   enabled: true
-  esEndpoint: "vpc-gen3-testv03-gen3-metadata-jcts3vsocoil6hbt3kpsnvqg74.us-east-1.es.amazonaws.com"
+  esEndpoint: "vpc-gen3-testv05-gen3-metadata-zhgmmp7sqtxhune4kmkq77lw6q.us-east-1.es.amazonaws.com"
   externalSecrets:
-    awsCreds: "gen3-testv03-default-aws-es-proxy-creds"
+    awsCreds: "gen3-testv05-default-aws-es-proxy-creds"
 
 dicom-server:
   enabled: false
   externalSecrets:
-    dbcreds: "gen3-testv03-default-dicom-server-creds"
+    dbcreds: "gen3-testv05-default-dicom-server-creds"
 
 dicom-viewer:
   enabled: false
   externalSecrets:
-    dbcreds: "gen3-testv03-default-dicom-viewer-creds"
+    dbcreds: "gen3-testv05-default-dicom-viewer-creds"
 
 
 fence:
   enabled: true
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-fence-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv05-default-fence-sa"
 
   externalSecrets:
-    fenceJwtKeys: "gen3-testv03-default-fence-jwt-keys"
-    fenceConfig: "gen3-testv03-default-fence-config"
+    fenceJwtKeys: "gen3-testv05-default-fence-jwt-keys"
+    fenceConfig: "gen3-testv05-default-fence-config"
     fenceGoogleAppCredsSecret: ""
     fenceGoogleStorageCredsSecret: ""
     createK8sGoogleAppSecrets: true
-    dbcreds: "gen3-testv03-default-fence-creds"
+    dbcreds: "gen3-testv05-default-fence-creds"
 
   usersync:
     usersync: true
@@ -159,7 +159,7 @@ indexd:
   enabled: true
   defaultPrefix: "dg.XXXX/"
   externalSecrets:
-    dbcreds: "gen3-testv03-default-indexd-creds"
+    dbcreds: "gen3-testv05-default-indexd-creds"
     createK8sServiceCredsSecret: true
 
 
@@ -167,20 +167,20 @@ manifestservice:
   enabled: true
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv03-default-manifestservice-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::707767160287:role/gen3_service/gen3-testv05-default-manifestservice-sa"
   externalSecrets:
     createK8sManifestServiceSecret: true
 
 metadata:
   enabled: true
   externalSecrets:
-    dbcreds: "gen3-testv03-default-metadata-creds"
+    dbcreds: "gen3-testv05-default-metadata-creds"
     createK8sMetadataSecret: true
 
 peregrine:
   enabled: true
   externalSecrets:
-    dbcreds: "gen3-testv03-default-sheepdg-creds"
+    dbcreds: "gen3-testv05-default-sheepdg-creds"
 
 pidgin:
   enabled: false
@@ -191,7 +191,7 @@ portal:
 requestor:
   enabled: false
   externalSecrets:
-    dbcreds: "gen3-testv03-default-requestor-creds"
+    dbcreds: "gen3-testv05-default-requestor-creds"
 
 revproxy:
   enabled: true
@@ -199,7 +199,7 @@ revproxy:
 sheepdog:
   enabled: true
   externalSecrets:
-    dbcreds: "gen3-testv03-default-sheepdog-creds"
+    dbcreds: "gen3-testv05-default-sheepdog-creds"
 
 ssjdispatcher:
   enabled: false
@@ -210,5 +210,5 @@ sower:
 wts:
   enabled: true
   externalSecrets:
-    dbcreds: "gen3-testv03-default-wts-creds"
+    dbcreds: "gen3-testv05-default-wts-creds"
     createK8sWtsSecret: true
