@@ -25,6 +25,9 @@ coreDNS:
   configuration:
     enabled: false
 
+custom-objects:
+  enabled: true
+
 ebs-csi-driver:
   enabled: true
   configuration:
@@ -72,7 +75,7 @@ karpenter-crds:
       - key: karpenter.k8s.aws/instance-category
         operator: In
         values:
-          - r  
+          - r
       - key: karpenter.k8s.aws/instance-size
         operator: In
         values:
@@ -86,6 +89,6 @@ karpenter-crds:
     consolidateAfter: "10m"
 
 vpc-cni:
-  enabled: true
+  enabled: false
   configuration:
     enabled: false
