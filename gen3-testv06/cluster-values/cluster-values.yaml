@@ -3,7 +3,7 @@ cluster: "gen3-testv06"
 accountNumber: "707767160287"
 
 configuration:
-  configurationRepo: https://github.com/emalinowski/gitops-repo-gen3#
+  configurationRepo: https://github.com/emalinowski/gitops-repo-gen3
 
 alb-controller:
   enabled: true
